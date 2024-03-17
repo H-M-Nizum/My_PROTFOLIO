@@ -1,0 +1,112 @@
+/* Nabvar section start */
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("img/me.png"), url("img/bg1.jpeg");
+    background-size: 35% 100%, cover;
+    background-position: right, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
+}
+.logo {
+    color: white;
+    font-size: 50px;
+    margin-left: 100px;
+    letter-spacing: 5px;
+  }
+  .logo span {
+    color: #e74c3c;
+  }
+/* Nabvar section end */
+
+/* Banner section start  */
+.text {
+    color: white;
+    margin-top: 90px;
+    padding-top: 130px;
+    margin-left: 100px;
+    max-width: 450px;
+  }
+  
+  .text h1 {
+    font-size: 50px;
+    margin: 10px 0px;
+  }
+  .text p {
+    font-size: 25px;
+  }
+  
+  .c-btn {
+    border: none;
+    outline: none;
+    color: white;
+    background: #e74c3c;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .c-btn a {
+    text-decoration: none;
+    color: white;
+  }
+
+  /* Banner section end */
+
+
+  /* Skill section start */
+  #skills {
+    padding: 100px 50px;
+    background: url("img/skill1.jpg");
+    background-size: cover;
+    color: white;
+  }
+  .sill_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    background: rgb(49, 47, 47);
+    padding: 50px;
+    margin-top: 10px;
+  }
+ 
+  /* Skill section end */
+
+
+  /* contact section start */
+  #contact {
+    padding: 100px 50px;
+    background: linear-gradient(160deg, rgb(49, 48, 48) 40%, #cccccc 0%);
+    background-size: cover;
+  }
+  .contact_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .contact_left {
+    flex-basis: 50%;
+  }
+  .contact_right {
+    flex-basis: 50%;
+  }
+  .contact_right form {
+    text-align: center;
+  }
+  
+  .contact_right form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .contact_right form input {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .contact_right form textarea {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  /* contact section end */
