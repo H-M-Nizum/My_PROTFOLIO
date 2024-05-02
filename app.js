@@ -238,17 +238,20 @@ const loadproject = (parent_body, array) => {
     const parentdiv = document.getElementById(parent_body)
     for(let i=0; i<3; i++){
         const newdiv = document.createElement("div")
-        newdiv.classList.add("col")
+        newdiv.classList.add("col-md-4")
         const data = array[i]
         // console.log(data)
         newdiv.innerHTML = `
-        <div class="card" style="width: 19rem;">
+        <div class="card" style="height:505px; width: 19rem; ">
             <img src="${data.thumbnail}" class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-body d-flex align-items-end">
                 <h5 class="card-title">${data.name}</h5>
-                <p class="card-text">${data.type} Project</p>
-                <button href="#" onclick=showmodal(${data.id}) class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                
             </div>
+            <div class=" ps-3 pb-3">
+                <p class="card-text">${data.type} Project</p>
+            </div>
+            <button  onclick=showmodal(${data.id}) class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
         </div>
         `
         parentdiv.appendChild(newdiv)
@@ -256,35 +259,42 @@ const loadproject = (parent_body, array) => {
 }
 
 loadproject("back_body", backend)
-loadproject("project_body", fullstack)
+loadproject("fullstack_body", fullstack)
 loadproject("front_body", frontend)
 
 const seemore = (parent_body, more, less, array ) => {
     console.log(parent_body, more, less, array)
     const parentdiv = document.getElementById(parent_body)
+    console.log("fullstack inner html : ", parentdiv.innerHTML)
+    parentdiv.innerHTML = ''
     document.getElementById(more).classList.add("d-none")
     document.getElementById(less).classList.remove("d-none")
-    for(let i=3; i<array.length; i++){
+    console.log("fullstack inner html : ", parentdiv.innerHTML)
+    for(let i=0; i<array.length; i++){
         const newdiv = document.createElement("div")
-        newdiv.classList.add("col")
+        newdiv.classList.add("col-md-4")
         const data = array[i]
-        // console.log(data)
+        console.log("Fullstack data : ",data)
         newdiv.innerHTML = `
-        <div class="card" style="width: 19rem;">
+        <div class="card" style="height:505px; width: 19rem; ">
             <img src="${data.thumbnail}" class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-body d-flex align-items-end">
                 <h5 class="card-title">${data.name}</h5>
-                <p class="card-text">${data.type} Project</p>
-                <a href="#" class="btn btn-primary">Details</a>
+                
             </div>
+            <div class=" ps-3 pb-3">
+                <p class="card-text">${data.type} Project</p>
+            </div>
+            <button  onclick=showmodal(${data.id}) class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
         </div>
         `
         parentdiv.appendChild(newdiv)
+        console.log("after added inner htnl : ", parentdiv.innerHTML)
     }
 }
 
 document.getElementById("fullstackmore").addEventListener('click', function(){
-    seemore("project_body", "fullstackmore", "fullstackless", fullstack)
+    seemore("fullstack_body", "fullstackmore", "fullstackless", fullstack)
 })
 document.getElementById("backmore").addEventListener('click', function(){
     seemore("back_body", "backmore", "backless", backend)
@@ -303,7 +313,7 @@ const seeless = (body, more, less, array) => {
 }
 
 document.getElementById("fullstackmore").addEventListener('click', function(){
-    seeless("project_body", "fullstackmore", "fullstackless", fullstack)
+    seeless("fullstack_body", "fullstackmore", "fullstackless", fullstack)
 })
 document.getElementById("backless").addEventListener('click', function(){
     seeless("back_body", "backmore", "backless", backend)
@@ -325,8 +335,8 @@ const modalbody = (data) => {
         <h3>${data.name} || ${data.type}</h3>
         <p><b style="font-size: 20px;">Feature : </b> ${data.feature}</p>
         <p><b style="font-size: 20px;"> Tecnology : </b> ${data.tecnology}</p>
-        <p><b style="font-size: 20px;"> Github : </b> ${data.github}</p>
-        <p><b style="font-size: 20px;"> Livelink : </b> ${data.livelink}</p>
+        <p><b style="font-size: 20px;"> Github : </b> <a target="_blank" href="${data.github}">${data.github}</a> </p>
+        <p><b style="font-size: 20px;"> Livelink : </b><a target="_blank" href="${data.livelink}">${data.livelink}</a></p>
         
     </div>
     `
@@ -338,7 +348,7 @@ const showmodal = (id) => {
     if(id < 50){
         for(let i=0; i<fullstack.length; i++){
             if(fullstack[i].id == id){
-                // console.log(id)
+                console.log(id)
                 const data = fullstack[i]
                 // console.log(data)
                 modalbody(data)
@@ -350,7 +360,7 @@ const showmodal = (id) => {
     else if(id > 99){
         for(let i=0; i<frontend.length; i++){
             if(frontend[i].id == id){
-                // console.log(id)
+                console.log(id)
                 const data = frontend[i]
                 // console.log(data)
                 modalbody(data)
@@ -362,7 +372,7 @@ const showmodal = (id) => {
     else{
         for(let i=0; i<backend.length; i++){
             if(backend[i].id == id){
-                // console.log(id)
+                console.log(id)
                 const data = backend[i]
                 // console.log(data)
                 modalbody(data)

@@ -1,3 +1,6 @@
+body{
+  width: 100%;
+}
 /* Nabvar section start */
 header {
     width: 100%;
@@ -17,6 +20,17 @@ header {
   .logo span {
     color: #e74c3c;
   }
+@media(max-width: 500px){
+  header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("img/me.png"), url("img/bg1.jpeg");
+    background-size: 65% 100%, cover;
+    background-position: right, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
+}
+}
 /* Nabvar section end */
 
 /* Banner section start  */
@@ -27,7 +41,7 @@ header {
     margin-left: 100px;
     max-width: 450px;
   }
-  
+
   .text h1 {
     font-size: 50px;
     margin: 10px 0px;
@@ -49,17 +63,30 @@ header {
     color: white;
   }
 
+  @media(max-width: 500px) {
+    .text {
+      margin-left: 10px;
+    }
+    .text p{
+      font-size: 15px;
+    }
+    .text h1{
+      font-size: 25px;
+    }
+  }
+
   /* Banner section end */
 
 
   /* Skill section start */
   #skills {
     padding: 100px 50px;
-    background: url("img/skill1.jpg");
+    background-color: rgb(73, 72, 72);
     background-size: cover;
     color: white;
+
   }
-  .sill_row {
+  /* .sill_row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +95,7 @@ header {
     background: rgb(49, 47, 47);
     padding: 50px;
     margin-top: 10px;
-  }
+  } */
  
   /* Skill section end */
 
